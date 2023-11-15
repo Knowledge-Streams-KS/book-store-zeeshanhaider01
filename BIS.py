@@ -2,7 +2,7 @@ from bookstoreModule import BookStore
 status=True
 
 while(status==True):
-    print("Main Menu: ")
+    print("Books Main Menu: ")
     print("***********************************************************************************")
     print("add book press(a): ")
     print("remove a book press(r):")

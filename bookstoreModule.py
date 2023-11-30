@@ -1,7 +1,9 @@
 from bookModule import book
+from user import User
 
 class BookStore:
     book_store={}
+    users={}
 
     @classmethod
     def add_book(cls,title, author, genre, price, quantity):
@@ -93,8 +95,9 @@ class BookStore:
 
     @classmethod
     def display_books(cls):
-        book_list=[]
+        book_list={}
         if(len(cls.book_store)>=0):
+            count=1
             for item in cls.book_store:
                 dict={}
                 dict["title"]=cls.book_store[item].title
@@ -103,11 +106,18 @@ class BookStore:
                 dict["price"]=cls.book_store[item].price
                 dict["quantity"]=cls.book_store[item].quantity
 
-                book_list.append(dict)
+                book_list[count]=dict
             
             print("List of all books are: ")
             print(book_list)
         else:
             print("database is empty.")
         input("Return to Main Menu: (Press any key): ")
-        
+    
+    @classmethod
+    def add_user(cls,name,age,address):
+        user=User(name, age, address)
+        print("initial key: ",len(cls.users)+1)
+        user_id=len(cls.users)+1
+        cls.users[user_id]=user
+        print("user Successfully added to system.")

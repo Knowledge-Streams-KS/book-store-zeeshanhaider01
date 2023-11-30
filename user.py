@@ -7,3 +7,12 @@ class User:
 
     def bookadder(self,newbook):
         self.books_borrowed.append(newbook)
+        print("book successfully added.")
+        input("Press any key to continue.")
+    
+    def display_user(self):
+        print("name: ",self.name)
+        print("age: ",self.age)
+        print("address: ",self.address)
+        print("books_borrowed: ",self.books_borrowed)
+        
